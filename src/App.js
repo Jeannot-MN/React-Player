@@ -1,24 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
+import React from "react"
+import ReactPlayer from "react-player"
+import { Box, Typography } from '@material-ui/core';
+import SearchAppBar from './Bar'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box display={"flex"} flexDirection="column" justifyContent="center" className="App">
+      <SearchAppBar></SearchAppBar>
+      {/* <Typography variant="h4">Click On the video to play</Typography> */}
+
+      <ReactPlayer
+        url="https://www.youtube.com/watch?v=ug50zmP9I7s"
+        controls={true}
+        muted={true}
+        style={{
+          margin: '10px auto'
+        }}
+      />
+    </Box>
   );
 }
 
